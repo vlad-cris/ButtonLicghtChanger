@@ -1,17 +1,17 @@
 // get the element
-let my_element = document.getElementById("button");
+let buttonElement = document.getElementById("button");
 
 // change the color
 function changeButtonColor() {
-    if (my_element.classList.contains("btn-danger")) {
-        my_element.classList.remove("btn-danger");
-        my_element.classList.add("btn-warning");
-    } else if (my_element.classList.contains("btn-warning")) {
-        my_element.classList.remove("btn-warning");
-        my_element.classList.add("btn-success");
+    if (buttonElement.classList.contains("btn-danger")) {
+        buttonElement.classList.remove("btn-danger");
+        buttonElement.classList.add("btn-warning");
+    } else if (buttonElement.classList.contains("btn-warning")) {
+        buttonElement.classList.remove("btn-warning");
+        buttonElement.classList.add("btn-success");
     } else { 
-        my_element.classList.remove("btn-success");
-        my_element.classList.add("btn-danger");
+        buttonElement.classList.remove("btn-success");
+        buttonElement.classList.add("btn-danger");
     }
 };
 
@@ -21,7 +21,7 @@ let id = window.setInterval(function () {
 },  10000);
 
 // add a change to the element at click and at every 10 seconds
-my_element.addEventListener("click", function() {
+buttonElement.addEventListener("click", function() {
     window.clearInterval(id); // clear the last repetitive interval
     changeButtonColor();
     id = window.setInterval(function () { 
