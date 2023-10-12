@@ -13,7 +13,7 @@ function changeButtonColor() {
         my_element.classList.remove("btn-success");
         my_element.classList.add("btn-danger");
     }
-}
+};
 
 // add a continue change to element at 10 seconds
 let id = window.setInterval(function () { 
@@ -27,4 +27,4 @@ my_element.addEventListener("click", function() {
     id = window.setInterval(function () { 
         changeButtonColor();
     },  10000);
-})
+});
