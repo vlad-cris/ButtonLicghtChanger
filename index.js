@@ -16,15 +16,15 @@ function changeButtonColor() {
 };
 
 // add a continue change to element at 10 seconds
-let id = window.setInterval(function () { 
+let repeatIntervalBtColor = window.setInterval(function () { 
     changeButtonColor();
 },  10000);
 
 // add a change to the element at click and at every 10 seconds
 buttonElement.addEventListener("click", function() {
-    window.clearInterval(id); // clear the last repetitive interval
+    window.clearInterval(repeatIntervalBtColor); // clear the last repetitive interval
     changeButtonColor();
-    id = window.setInterval(function () { 
+    repeatIntervalBtColor = window.setInterval(function () { 
         changeButtonColor();
     },  10000);
 });
