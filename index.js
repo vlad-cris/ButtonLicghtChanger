@@ -1,5 +1,8 @@
+// get the element
+let my_element = document.getElementById("button");
+
+// change the color
 function changeButtonColor() {
-    let my_element = document.getElementById("button");
     if (my_element.classList.contains("btn-danger")) {
         my_element.classList.remove("btn-danger");
         my_element.classList.add("btn-warning");
@@ -12,16 +15,16 @@ function changeButtonColor() {
     }
 }
 
+// add a continue change to element at 10 seconds
 let id = window.setInterval(function () { 
     changeButtonColor();
 },  10000);
 
-window.addEventListener("click", function(element) {
-    this.clearInterval(id);
-    if (element.target.tagName == "BUTTON") {
-       changeButtonColor();
-    }
-    id = this.setInterval(function () { 
+// add a change to the element at click and at every 10 seconds
+my_element.addEventListener("click", function() {
+    window.clearInterval(id); // clear the last repetitive interval
+    changeButtonColor();
+    id = window.setInterval(function () { 
         changeButtonColor();
     },  10000);
 })
