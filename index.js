@@ -1,18 +1,17 @@
+//classes list and selector
+let buttonClassList = ["btn btn-danger position-absolute top-50 start-50 translate-middle",
+                    "btn btn-warning position-absolute top-50 start-50 translate-middle",
+                    "btn btn-success position-absolute top-50 start-50 translate-middle"];
+
+let buttonClassSelector = 0;
+
 // get the element
 let buttonElement = document.getElementById("button");
 
 // change the color
 function changeButtonColor() {
-    if (buttonElement.classList.contains("btn-danger")) {
-        buttonElement.classList.remove("btn-danger");
-        buttonElement.classList.add("btn-warning");
-    } else if (buttonElement.classList.contains("btn-warning")) {
-        buttonElement.classList.remove("btn-warning");
-        buttonElement.classList.add("btn-success");
-    } else { 
-        buttonElement.classList.remove("btn-success");
-        buttonElement.classList.add("btn-danger");
-    }
+    buttonClassSelector = ++buttonClassSelector % buttonClassList.length;// next index number from buttonClassList
+    buttonElement.className = buttonClassList[buttonClassSelector];
 };
 
 // add a continue change to element at 10 seconds
